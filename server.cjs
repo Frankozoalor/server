@@ -6,7 +6,7 @@ const knex = require('knex');
   const db=  knex({
     client: 'pg',
     connection: {
-        conectionString: 'process.env.DATABASE_URL',
+        connectionString: 'process.env.DATABASE_URL',
       ss1: true
     }
   });
