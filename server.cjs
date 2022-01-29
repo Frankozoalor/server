@@ -14,8 +14,7 @@ const knex = require('knex');
         }
      }
      });
-     
-     knex.connect();
+
 
  db.select('*').from('users').then(data => {
     console.log(data);
