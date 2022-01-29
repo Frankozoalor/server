@@ -6,7 +6,7 @@ const knex = require('knex');
   const db=  knex({
     client: 'pg',
     connection: {
-      host : 'localhost',
+      host : 'postgresql-concentric-54148',
       port : 5432,
       user : '',
       password : '',
