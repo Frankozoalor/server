@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/',(req,res) => {
-    res.send(db.users)
+    res.send('it is working')
 })
 
 app.post('/signin', (req,res) =>{
@@ -51,7 +51,7 @@ app.post('/signin', (req,res) =>{
 app.post('/register',(req,res) => {
     const {email,name,password} = req.body;
     if(!email || !name | !password){
-        return res.status(400).json('incorrect form submission')
+        return res.status(400).json('incorrect form')
     }
    const hash = bcrypt.hashSync(password);
    db.transaction(trx => {
@@ -98,7 +98,7 @@ app.put('/image', (req,res) => {
 }).catch(err => res.status(err,400).json('unable to get entries'))
 })
 
-app.listen(4000, ()=> {
-    console.log('App is running on 4000');
+app.listen(process.env.PORT|| 4000, ()=> {
+    console.log(`App is running on port ${process.env.PORT}`);
 })
 
