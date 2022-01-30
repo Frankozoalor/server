@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get('/',(req,res) => {
-    res.send('it is wrking')
+    res.send('FINALLY WORKING')
 })
 
 app.post('/signin', (req,res) =>{
